@@ -49,6 +49,7 @@ const App = () => {
 ///// still need to make card expand in order to show other details about each park, probably using the details and summary tags? also want delete and edit buttons to be hidden from main view
     return (
         <>
+            <h1> Welcome to National Parks R Us </h1>
             <div className="parks">
                 {parks.map((park) => {
                     return (
