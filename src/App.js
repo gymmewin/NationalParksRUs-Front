@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import './App.css'
 import Footer from './components/footer.js'
 
 import Add from './components/Add.js'
@@ -50,7 +51,7 @@ const App = () => {
 ///// still need to make card expand in order to show other details about each park, probably using the details and summary tags? also want delete and edit buttons to be hidden from main view
     return (
         <>
-            <h1> Welcome to National Parks R Us </h1>
+            <h1 id="header"> Welcome to National Parks R Us </h1>
             <div className="parks">
                 {parks.map((park) => {
                     return (
