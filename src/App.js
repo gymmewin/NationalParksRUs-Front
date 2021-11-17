@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import Footer from './components/footer.js'
 
 import Add from './components/Add.js'
 import Edit from './components/Edit.js'
@@ -70,6 +71,8 @@ const App = () => {
                 <Add handleCreate={handleCreate} />
 
             </details>
+
+            <Footer />
         </>
     )
 }
