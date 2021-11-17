@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
+import Add from './components/Add.js'
+import Edit from './components/Edit.js'
+
 const App = () => {
     let [parks, setParks] = useState([])
 
@@ -9,7 +12,7 @@ const App = () => {
             .get('///insert backend url here///')
             .then(
                 (response) => setParks(response.data),
-                (err) => console.error(error)
+                (err) => console.error(err)
             )
     }
 
