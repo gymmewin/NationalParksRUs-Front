@@ -29,7 +29,7 @@ const App = () => {
 
     const handleDelete = (event) => {
         axios
-            .delete('///////***** insert backend url here *****???????' + event.target.value)
+            .delete('https://natl-parks-r-us-back.herokuapp.com/api/national-parks' + event.target.value)
             .then((response) => {
                 getParks()
             })
@@ -38,7 +38,7 @@ const App = () => {
     const handleUpdate = (editPark) => {
         console.log(editPark); // for debugging purposes
         axios
-            .put('////**** insert backend url here ****/////' + editPark.id, editPark)
+            .put('https://natl-parks-r-us-back.herokuapp.com/api/national-parks' + editPark.id, editPark)
             .then((response) => {
                 getParks()
             })
