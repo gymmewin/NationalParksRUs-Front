@@ -16,6 +16,18 @@
 
 }
 
+/* ========== Park Cards ========== */
+.park{
+   display:grid;
+   justify-content: space-evenly;
+   text-align: center
+}
+
+.img {
+   width: 300px;
+   height: 250px;
+}
+
 /* ========== Footer ========== */
 footer{
    text-align: center;

@@ -11,7 +11,7 @@ const App = () => {
 
     const getParks = () => {
         axios
-            .get('///insert backend url here///')
+            .get('https://natl-parks-r-us-back.herokuapp.com/api/national-parks')
             .then(
                 (response) => setParks(response.data),
                 (err) => console.error(err)
@@ -20,7 +20,7 @@ const App = () => {
 
     const handleCreate = (addPark) => {
         axios
-            .post('////**** insert backend url here ****/////', addPark)
+            .post('https://natl-parks-r-us-back.herokuapp.com/api/national-parks', addPark)
             .then((response) => {
                 console.log(response);
                 getParks()
@@ -72,7 +72,7 @@ const App = () => {
                 {parks.map((park) => {
                     return (
                         <div className="park" id={`openModal${park.id}`} onClick={() => {openModalButton(`modal${park.id}`)}} key={park.id}>
-                            <img src={park.photo} alt={park.description} />
+                            <img className="img" src={park.image} />
                             <h4>{park.name}</h4>
                             <h5>{park.location}</h5>
                             <div className="modal" id={`modal${park.id}`}>
