@@ -17,16 +17,48 @@
    padding-bottom: 20px;
 }
 
+#subhead {
+   text-align: center;
+   font-size: 36px;
+}
 /* ========== Park Cards ========== */
 .parks{
    display:grid;
-   justify-content: space-evenly;
+   grid-template-columns: 33% 33% 33%;
    text-align: center;
 }
 
 .img {
    width: 300px;
    height: 250px;
+}
+
+/* ========== Create ========== */
+.add {
+   text-align: center;
+   font-weight: bolder;
+   background-color: darkolivegreen;
+   padding-top: 2px;
+   padding-bottom: 2px;
+}
+
+.create {
+   display: grid;
+   justify-content: center;
+   align-content: center;
+   text-align: center;
+   background-color: ivory;
+}
+
+.submit {
+   background-color: DarkOliveGreen;
+   color: ivory;
+   font-weight:bolder;
+}
+
+.submit:hover {
+   background-color: ivory;
+   color: darkolivegreen;
 }
 
 /* ========== Footer ========== */
@@ -36,7 +68,7 @@ footer{
    align-items: center;
    justify-content: space-evenly;
    background-color: DarkOliveGreen;
-   height: 80px;
+   height: 70px;
    padding-bottom: 15px;
 }
 

@@ -15,28 +15,20 @@ const Add = (props) => {
 
     return (
         <>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="create">
                 <label htmlFor="name">Name: </label>
                 <input type="text" name="name" value={park.name} onChange={handleChange}/>
-                <br />
-                <br />
                 <label htmlFor="description">Description: </label>
                 <input type="text" name="description" value={park.description} onChange={handleChange}/>
-                <br />
-                <br />
                 <label htmlFor="image">Image: </label>
                 <input type="text" name="image" value={park.image} onChange={handleChange}/>
-                <br />
-                <br />
                 <label htmlFor="location">Location: </label>
                 <input type="text" name="location" value={park.location} onChange={handleChange}/>
-                <br />
-                <br />
                 <label htmlFor="admission_fee">Admission Fee: </label>
                 <input type="text" name="admission_fee" value={park.admission_fee} onChange={handleChange}/>
-                <br />
-                <br />
-                <input type="submit"/>
+                <br/>
+                <input type="submit" className="submit"/>
+                <br/>
             </form>
         </>
     )

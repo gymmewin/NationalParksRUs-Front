@@ -67,6 +67,7 @@ const App = () => {
     return (
         <>
             <h1 id="header"> Welcome to National Parks R Us </h1>
+            <h2 id="subhead"> Top 10 National Parks </h2>
             <div className="parks">
                 {parks.map((park) => {
                     return (
@@ -90,7 +91,7 @@ const App = () => {
                 })}
             </div>
             <details>
-                <summary>Add a Park</summary>
+                <summary className="add">Add a Park</summary>
                 <Add handleCreate={handleCreate} />
 
             </details>
