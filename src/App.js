@@ -77,7 +77,7 @@ const App = () => {
                             <h5>{park.location}</h5>
                             <div className="modal" id={`modal${park.id}`}>
                                 <h2>{park.name}</h2>
-                                <img src={park.photo} alt={park.description} />
+                                <img src={park.image} alt={park.description} />
                                 <h3>{park.location}</h3>
                                 <h3>{park.description}</h3>
                                 <h3>Admission fee:{park.admission_fee}</h3>
