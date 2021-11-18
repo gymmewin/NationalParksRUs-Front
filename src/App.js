@@ -51,13 +51,12 @@ const App = () => {
         }
     }
 
-    const closeModalButton = (event, modalId) => {
+    const closeModalButton = (event) => {
         event.stopPropagation()
-        let modal = document.getElementByClassId(modalId)
-        if (modal.style.display !== 'none') {
-            modal.style.display = 'none'
+        let modal = document.getElementsByClassName('modal')
+        for (let i=0; i < modal.length; i++){
+           modal[i].style.display = "none"
         }
-
     }
 
     useEffect(() => {
@@ -74,15 +73,14 @@ const App = () => {
                         <div className="park" id={`openModal${park.id}`} onClick={() => {openModalButton(`modal${park.id}`)}} key={park.id}>
                             <img className="img" src={park.image} />
                             <h4>{park.name}</h4>
-                            <h5>{park.location}</h5>
                             <div className="modal" id={`modal${park.id}`}>
                                 <h2>{park.name}</h2>
-                                <img src={park.image} alt={park.description} />
+                                <img src={park.image} id="modalimg" />
                                 <h3>{park.location}</h3>
                                 <h3>{park.description}</h3>
                                 <h3>Admission fee:{park.admission_fee}</h3>
                                 <Edit handleUpdate={handleUpdate} park={park} />
-                                <button id={`closeModal${park.id}`} onClick={closeModalButton}>close</button>
+                                <button id="closeModal" onClick={closeModalButton}>close</button>
                                 <button onClick={handleDelete} value={park.id}>
                                 delete park
                                 </button>
