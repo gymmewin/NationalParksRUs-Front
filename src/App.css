@@ -52,18 +52,29 @@ p{
 /* ========== Modal ========== */
 .modal {
    background-color: ivory;
-	position: fixed;
-	top: 0;
-	left: 0;
-	height: 70%;
-	width: 70%;
+   border: 3px solid DarkOliveGreen;
+   position: absolute;
+   float: left;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
 	z-index: 1;
+   width: 600px;
+   max-width: 100%;
+   max-height: 100%;
 	overflow: auto;
    display: none;
-   margin: 15% auto;
+}
+
+#closeModal {
+   position: absolute;
+   top: 0;
+   right:0;
+   background-color: DarkOliveGreen;
+   color: ivory;
 }
 
 #modalimg {
-   height: 600px;
-   width: 500px;
+   height: 500px;
+   width: 400px;
 }
