@@ -11,7 +11,7 @@ const App = () => {
 
     const getParks = () => {
         axios
-            .get('///insert backend url here///')
+            .get('https://natl-parks-r-us-back.herokuapp.com/api/national-parks')
             .then(
                 (response) => setParks(response.data),
                 (err) => console.error(err)
@@ -20,7 +20,7 @@ const App = () => {
 
     const handleCreate = (addPark) => {
         axios
-            .post('////**** insert backend url here ****/////', addPark)
+            .post('https://natl-parks-r-us-back.herokuapp.com/api/national-parks', addPark)
             .then((response) => {
                 console.log(response);
                 getParks()
@@ -29,7 +29,7 @@ const App = () => {
 
     const handleDelete = (event) => {
         axios
-            .delete('///////***** insert backend url here *****???????' + event.target.value)
+            .delete('https://natl-parks-r-us-back.herokuapp.com/api/national-parks' + event.target.value)
             .then((response) => {
                 getParks()
             })
@@ -38,7 +38,7 @@ const App = () => {
     const handleUpdate = (editPark) => {
         console.log(editPark); // for debugging purposes
         axios
-            .put('////**** insert backend url here ****/////' + editPark.id, editPark)
+            .put('https://natl-parks-r-us-back.herokuapp.com/api/national-parks' + editPark.id, editPark)
             .then((response) => {
                 getParks()
             })
@@ -51,13 +51,12 @@ const App = () => {
         }
     }
 
-    const closeModalButton = (event, modalId) => {
+    const closeModalButton = (event) => {
         event.stopPropagation()
-        let modal = document.getElementByClassId(modalId)
-        if (modal.style.display !== 'none') {
-            modal.style.display = 'none'
+        let modal = document.getElementsByClassName('modal')
+        for (let i=0; i < modal.length; i++){
+           modal[i].style.display = "none"
         }
-
     }
 
     useEffect(() => {
@@ -72,17 +71,16 @@ const App = () => {
                 {parks.map((park) => {
                     return (
                         <div className="park" id={`openModal${park.id}`} onClick={() => {openModalButton(`modal${park.id}`)}} key={park.id}>
-                            <img src={park.photo} alt={park.description} />
+                            <img className="img" src={park.image} />
                             <h4>{park.name}</h4>
-                            <h5>{park.location}</h5>
                             <div className="modal" id={`modal${park.id}`}>
                                 <h2>{park.name}</h2>
-                                <img src={park.photo} alt={park.description} />
+                                <img src={park.image} id="modalimg" />
                                 <h3>{park.location}</h3>
                                 <h3>{park.description}</h3>
                                 <h3>Admission fee:{park.admission_fee}</h3>
                                 <Edit handleUpdate={handleUpdate} park={park} />
-                                <button id={`closeModal${park.id}`} onClick={closeModalButton}>close</button>
+                                <button id="closeModal" onClick={closeModalButton}>close</button>
                                 <button onClick={handleDelete} value={park.id}>
                                 delete park
                                 </button>
