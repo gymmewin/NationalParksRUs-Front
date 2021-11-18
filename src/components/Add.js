@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 
 const Add = (props) => {
-    let emptyPark = { name: '', description: '', image: '', location: '', admission_fee: '' }
-    const [park, setPark] = useState(emptyPark)
+    // let emptyPark = { name: '', description: '', image: '', location: '', admission_fee: '' }
+    // const [park, setPark] = useState(emptyPark)
+    const [park, setPark] = useState({...props.park})
 
     const handleChange = (event) => {
         setPark({ ...park, [event.target.name]: event.target.value})
