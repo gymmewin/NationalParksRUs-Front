@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 
 const Edit = (props) => {
-    let emptyPark = { id: props.id, { name: props.park.name, description: props.park.description, image: props.park.image, location: props.park.location, admission_fee: props.park.admission_fee } }
+    let emptyPark = { id: props.id, name: props.park.name, description: props.park.description, image: props.park.image, location: props.park.location, admission_fee: props.park.admission_fee  }
     const [park, setPark] = useState(emptyPark)
 
     const handleChange = (event) => {
