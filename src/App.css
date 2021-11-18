@@ -17,10 +17,10 @@
 }
 
 /* ========== Park Cards ========== */
-.park{
+.parks{
    display:grid;
    justify-content: space-evenly;
-   text-align: center
+   text-align: center;
 }
 
 .img {
@@ -51,7 +51,7 @@ p{
 
 /* ========== Modal ========== */
 .modal {
-   background-color: rgba(0,0,0,0.4);
+   background-color: ivory;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -60,6 +60,7 @@ p{
 	z-index: 1;
 	overflow: auto;
    display: none;
+   margin: 15% auto;
 }
 
 #modalimg {
