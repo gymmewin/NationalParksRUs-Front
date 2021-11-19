@@ -111,3 +111,13 @@ p{
    height: 500px;
    width: 400px;
 }
+
+#delete {
+   margin-bottom: 3px;
+   background-color: ivory;
+}
+
+#delete:hover {
+   background-color: red;
+   color: ivory;
+}

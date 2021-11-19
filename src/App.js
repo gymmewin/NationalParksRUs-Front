@@ -83,7 +83,7 @@ const App = () => {
                                 <h3>Admission fee: ${park.admission_fee}</h3>
                                 <Edit handleUpdate={handleUpdate} park={park} />
                                 <button id="closeModal" onClick={closeModalButton}>close</button>
-                                <button onClick={handleDelete} value={park.id}>
+                                <button onClick={handleDelete} value={park.id} id="delete">
                                 delete park
                                 </button>
                             </div>

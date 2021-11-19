@@ -38,7 +38,7 @@ const Edit = (props) => {
                     <input type="text" name="admission_fee" value={park.admission_fee} onChange={handleChange}/>
                     <br />
                     <br />
-                    <input type="submit" />
+                    <input type="submit" className="submit"/>
                 </form>
             </details>
         </>
