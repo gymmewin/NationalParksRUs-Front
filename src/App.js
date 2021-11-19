@@ -1,12 +1,15 @@
-import React, { useState, useEffect } from 'react'
+
+import React, { useState, useEffect, useRef } from 'react'
 import axios from 'axios'
 import './App.css'
 import Footer from './components/footer.js'
+
 
 import Add from './components/Add.js'
 import Edit from './components/Edit.js'
 
 const App = () => {
+    const mapContainerRef = useRef(null);
     let [parks, setParks] = useState([])
 
     const getParks = () => {
@@ -64,6 +67,7 @@ const App = () => {
         getParks()
     }, [])
 
+    const googleMapsUrlPrefix = "https://www.google.com/maps/embed/v1/place?key=AIzaSyDvlDMBryBUSRxUdnQ4k5wT0uH3bbY7ZHI&q="
 
     return (
         <>
@@ -79,6 +83,14 @@ const App = () => {
                                 <h2>{park.name}</h2>
                                 <img src={park.image} id="modalimg" />
                                 <h3>{park.location}</h3>
+                                <iframe
+                                  // width="450"
+                                  // height="250"
+                                  // frameBorder="0"
+                                  style={{ border:0 }}
+                                  src={googleMapsUrlPrefix + park.name}
+                                >
+                                </iframe>
                                 <h3>{park.description}</h3>
                                 <h3>Admission fee: ${park.admission_fee}</h3>
                                 <Edit handleUpdate={handleUpdate} park={park} />
