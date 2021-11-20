@@ -8,6 +8,9 @@ import Footer from './components/footer.js'
 import Add from './components/Add.js'
 import Edit from './components/Edit.js'
 
+const backend_url_prefix = "https://natl-parks-r-us-back.herokuapp.com/api"
+// const backend_url_prefix = "http://localhost:8000/api"
+
 const App = () => {
     const mapContainerRef = useRef(null);
     let [parks, setParks] = useState([])
@@ -15,7 +18,7 @@ const App = () => {
 
     const getParks = () => {
         axios
-            .get('https://natl-parks-r-us-back.herokuapp.com/api/national-parks')
+            .get(backend_url_prefix + '/national-parks')
             .then(
                 (response) => setParks(response.data),
                 (error) => console.error(error)
@@ -25,7 +28,7 @@ const App = () => {
 
     const getAttractions = () => {
         axios
-            .get('https://natl-parks-r-us-back.herokuapp.com/api/attractions')
+            .get(backend_url_prefix + '/attractions')
             .then(
                 (response) => setAttractions(response.data),
                 (error) => console.error(error)
@@ -35,7 +38,7 @@ const App = () => {
 
     const handleCreate = (addPark) => {
         axios
-            .post('https://natl-parks-r-us-back.herokuapp.com/api/national-parks', addPark)
+            .post(backend_url_prefix + '/national-parks', addPark)
             .then((response) => {
                 console.log(response);
                 getParks()
@@ -44,7 +47,7 @@ const App = () => {
 
     const handleDelete = (event) => {
         axios
-            .delete('https://natl-parks-r-us-back.herokuapp.com/api/national-parks/' + event.target.value)
+            .delete(backend_url_prefix + '/national-parks/' + event.target.value)
             .then((response) => {
                 getParks()
             })
@@ -53,7 +56,7 @@ const App = () => {
     const handleUpdate = (editPark) => {
         console.log(editPark); // for debugging purposes
         axios
-            .put('https://natl-parks-r-us-back.herokuapp.com/api/national-parks/' + editPark.id, editPark)
+            .put(backend_url_prefix + '/national-parks/' + editPark.id, editPark)
             .then((response) => {
                 getParks()
             })
@@ -75,10 +78,13 @@ const App = () => {
     }
 
     useEffect(() => {
-        getParks()
+        getParks();
+        getAttractions();
     }, [])
 
     const googleMapsUrlPrefix = "https://www.google.com/maps/embed/v1/place?key=AIzaSyDvlDMBryBUSRxUdnQ4k5wT0uH3bbY7ZHI&q="
+
+    console.log(attractions)
 
     return (
         <>
@@ -105,11 +111,16 @@ const App = () => {
                                 <h3>{park.description}</h3>
                                 <h3>Admission fee: ${park.admission_fee}</h3>
                                 <ul>
-                                    attractions.map((attraction) => {
-                                        return (
-                                            <li></li>
-                                        )
-                                    })
+                                Top Attractions:
+                                    {
+                                        attractions
+                                            .filter((attraction) => attraction.park === park.id)
+                                            .map((attraction) => {
+                                                return (
+                                                    <li>{attraction.name}</li>
+                                                )
+                                            })
+                                    }
                                 </ul>
                                 <Edit handleUpdate={handleUpdate} park={park} />
                                 <button id="closeModal" onClick={closeModalButton}>close</button>
