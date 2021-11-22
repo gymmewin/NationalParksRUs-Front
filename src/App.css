@@ -124,3 +124,12 @@ p{
    background-color: red;
    color: ivory;
 }
+
+input {
+    width: 300px;
+    margin: 20px;
+}
+
+#root {
+    text-align: center;
+}
