@@ -15,7 +15,7 @@ Technologies Used:
 
 Approach Taken:
 ---------------
-After we chose a topic, we set up a trello board and pinned all of our initial tasks to the board. We discussed user stories and what we wanted our application to be able to do. After that, we began to divide up the initial work. Vlad tackled the back end, Kerry Beth did the front end, and Jimmy handled set up for **GitHub** and **Heroku**.
+After we chose a topic, we set up a trello board and pinned all of our initial tasks to the board. We discussed user stories and what we wanted our application to be able to do. After that, we began to divide up the initial work. Vlad tackled the back end, Kerry Beth did the front end, and Jimmy handled set up for **GitHub** and **Heroku**. After Vlad & Kerry Beth finished setting up the front and back end, Jimmy did a code review and tested to make sure everything was working properly. Jimmy also began styling the page. Kerry Beth went on to work on a modal that would pop up with information about each National Park. Vlad worked on getting `Goggle Maps` to display geo location of each National Park. As code would continue to get updated, Jimmy would test the code and find any bugs and troubleshoot them with the team. 
 
 Issues Along The Way:
 ---------------------
