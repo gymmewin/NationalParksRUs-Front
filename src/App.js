@@ -104,13 +104,7 @@ const App = () => {
                                 </iframe>
                                 <h3>{park.description}</h3>
                                 <h3>Admission fee: ${park.admission_fee}</h3>
-                                <ul>
-                                    attractions.map((attraction) => {
-                                        return (
-                                            <li></li>
-                                        )
-                                    })
-                                </ul>
+                                
                                 <Edit handleUpdate={handleUpdate} park={park} />
                                 <button id="closeModal" onClick={closeModalButton}>close</button>
                                 <button onClick={handleDelete} value={park.id} id="delete">
